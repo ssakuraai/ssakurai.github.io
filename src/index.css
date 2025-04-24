@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-sakura-light: #FFE4E1;
+  --color-sakura-mid: #FFC0CB;
+  --color-sakura-dark: #FFB6C1;
+  --color-sakura-accent: #DB7093;
+  --color-purple-dark: #4B0082;
+  --color-purple-mid: #6A0DAD;
+  --color-purple-light: #9370DB;
+}
+
+@font-face {
+  font-family: 'Sakura Brush';
+  src: url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Theme Classes */
+.light-theme {
+  --bg-primary: var(--color-sakura-light);
+  --bg-secondary: white;
+  --text-primary: var(--color-sakura-accent);
+  --text-secondary: var(--color-sakura-dark);
+}
+
+.dark-theme {
+  --bg-primary: var(--color-purple-dark);
+  --bg-secondary: var(--color-purple-mid);
+  --text-primary: var(--color-sakura-mid);
+  --text-secondary: var(--color-sakura-light);
+}
+
+/* Brush Font for Titles */
+.brush-font {
+  font-family: 'Ma Shan Zheng', cursive, sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Animations */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.petal {
+  animation-name: fall;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .brush-font {
+    letter-spacing: 0.02em;
+  }
+}
