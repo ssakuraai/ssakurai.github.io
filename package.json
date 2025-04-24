@@ -1,5 +1,6 @@
 {
   "name": "vite-react-typescript-starter",
+  "homepage": "https://ssakuraai.github.io/ssakurai.github.io/"
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,6 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
